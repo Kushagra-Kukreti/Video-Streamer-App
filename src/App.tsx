@@ -5,9 +5,13 @@ import Movies from "./pages/Movies"
 import Webseries from "./pages/Webseries"
 import Video from "./pages/Video"
 import Play from "./pages/Play"
-
+import BeforeAuthentication from "./pages/BeforeAuthentication"
+import { useAuth0 } from "@auth0/auth0-react";
 function App() {
+   const{isAuthenticated}=useAuth0();
   return (
+    <>
+    {!(isAuthenticated)?<BeforeAuthentication/>:
     <>
     <Header/>
     <Routes>
@@ -17,6 +21,11 @@ function App() {
     <Route path="/play" element={<Play/>} />
     <Route path="/webseries" element={<Webseries/>} />
     </Routes>
+    </>
+    }
+    
+
+    
     </>
   )
 }

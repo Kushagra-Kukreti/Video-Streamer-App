@@ -1,0 +1,21 @@
+import { useAuth0 } from "@auth0/auth0-react";
+const BeforeAuthentication = () => {
+  const { loginWithRedirect } = useAuth0();
+  return (
+    <>
+     <img src="/public/images/before.jpg" style={{
+      position:"relative",
+      height:"100vh",
+      overflow:"hidden",
+      width:"100vw",
+       objectFit:"fill"}}/>
+   
+     <button className="btn btn-primary" style={{position:"absolute" ,right:"2rem", top:"0.5rem"}} onClick={() => loginWithRedirect()}>Log In</button>
+
+     <div style={{position:"absolute" ,top:"40%", right:"9%", color:"white"}}><h1><span style={{color:"red"}}>WELCOME TO WATCH YOUR FAVOURITE</span> <span style={{color:"lightblue"}}>MOVIES</span> AND WEBSERIES</h1></div>
+      
+    </>
+  )
+}
+
+export default BeforeAuthentication

@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom"
-
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Header = () => {
+  const { logout ,isAuthenticated } = useAuth0();
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
@@ -25,10 +26,12 @@ const Header = () => {
         <li className="nav-item">
           <NavLink className="nav-link" aria-current="page" to={"/webseries"}>Webseries</NavLink>
         </li>
+        
       </ul>
       <form className="d-flex" role="search">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-success" type="submit">Search</button>
+        <button className="btn btn-success" type="submit">Search</button>
+       { isAuthenticated &&<button className="btn btn-primary" type="submit" style={{marginLeft:"0.5rem"}} onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Logout</button>}
       </form>
     </div>
   </div>
