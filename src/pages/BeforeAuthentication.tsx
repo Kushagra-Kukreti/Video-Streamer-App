@@ -8,7 +8,7 @@ const BeforeAuthentication = () => {
       height:"100vh",
       overflow:"hidden",
       width:"100vw",
-       objectFit:"fill"}}/>
+      objectFit:"cover"}}/>
    
      <button className="btn btn-primary" style={{position:"absolute" ,right:"2rem", top:"0.5rem"}} onClick={() => loginWithRedirect()}>Log In</button>
 

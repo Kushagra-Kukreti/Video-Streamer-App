@@ -25,7 +25,7 @@ const Video = () => {
           }
           
         }
-       className="btn btn-outline-secondary">Watch Now</div>
+       className="btn btn-primary">Watch Now</div>
        </NavLink>
       </div>
       <div className="card-body">
