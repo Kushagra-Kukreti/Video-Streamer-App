@@ -1,7 +1,10 @@
 import VideoCard, { VideoCardProp } from './VideoCard';
 import { data } from '../utils/api';
+import { useSearchFilter } from '../contexts/SearchFilterContext';
 
 const VideoCardsLayout = () => {
+
+  const {searchValue} = useSearchFilter()
   return (
     <>
     <div 
@@ -11,7 +14,7 @@ const VideoCardsLayout = () => {
         gap:"1rem"
       }}
       >
-          {data.map((currItem: VideoCardProp,index:number) => {
+          {data.filter((currData:VideoCardProp)=>searchValue!==" "?currData.title.toLowerCase().startsWith(searchValue.toLowerCase()):currData).map((currItem: VideoCardProp,index:number) => {
             return (
               <VideoCard key={index}
               description={currItem.description}
