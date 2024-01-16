@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom"
 import { useAuth0 } from "@auth0/auth0-react";
+import { useSearchFilter } from "../contexts/SearchFilterContext";
 
 const Header = () => {
   const { logout} = useAuth0();
-
+  const {setSearchValue} =  useSearchFilter()
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
@@ -30,8 +31,8 @@ const Header = () => {
         
       </ul>
       <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-success" type="submit">Search</button>
+        <input onChange={(e)=>setSearchValue(e.target.value)} className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button  className="btn btn-success" type="submit">Search</button>
        {localStorage.getItem('auth') && <button 
        className="btn btn-primary" 
        type="submit" 
