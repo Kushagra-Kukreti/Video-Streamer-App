@@ -11,9 +11,9 @@ const VideoCardsLayout = () => {
         gap:"1rem"
       }}
       >
-          {data.map((currItem: VideoCardProp) => {
+          {data.map((currItem: VideoCardProp,index:number) => {
             return (
-              <VideoCard
+              <VideoCard key={index}
               description={currItem.description}
               videoUrl={currItem.videoUrl}
                 thumbnailUrl={currItem.thumbnailUrl}

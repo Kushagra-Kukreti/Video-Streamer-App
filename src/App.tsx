@@ -6,12 +6,14 @@ import Webseries from "./pages/Webseries"
 import Video from "./pages/Video"
 import Play from "./pages/Play"
 import BeforeAuthentication from "./pages/BeforeAuthentication"
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth0 } from "@auth0/auth0-react"
 function App() {
-   const{isAuthenticated}=useAuth0();
+ const {isAuthenticated} = useAuth0()
+ if(isAuthenticated)
+ localStorage.setItem("auth", "true");
   return (
     <>
-    {!(isAuthenticated)?<BeforeAuthentication/>:
+    {!(localStorage.getItem('auth'))?<BeforeAuthentication/>:
     <>
     <Header/>
     <Routes>
@@ -19,7 +21,7 @@ function App() {
     <Route path="/movies" element={<Movies />} />
     <Route path="/video" element={<Video />} />
     <Route path="/play" element={<Play/>} />
-    <Route path="/webseries" element={<Webseries/>} />
+    <Route path="/webseries" element={<Webseries />} />
     </Routes>
     </>
     }

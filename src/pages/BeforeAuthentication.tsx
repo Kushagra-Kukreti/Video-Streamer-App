@@ -1,6 +1,8 @@
 import { useAuth0 } from "@auth0/auth0-react";
 const BeforeAuthentication = () => {
-  const { loginWithRedirect } = useAuth0();
+  const { loginWithRedirect,isAuthenticated } = useAuth0();
+  if(isAuthenticated)
+  localStorage.setItem('authentication', "true");
   return (
     <>
      <img src="/public/images/before.jpg" style={{
