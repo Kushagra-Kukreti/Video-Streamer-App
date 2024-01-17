@@ -5,7 +5,8 @@ const BeforeAuthentication = () => {
   localStorage.setItem('authentication', "true");
   return (
     <>
-     <img src="/public/images/before.jpg" style={{
+     <div  style={{
+      backgroundColor:"black",
       position:"relative",
       height:"100vh",
       overflow:"hidden",
