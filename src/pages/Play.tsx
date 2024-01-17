@@ -44,9 +44,10 @@ const Play = () => {
       backgroundColor:"black"
     }}
     >
-      {data.map((currItem: VideoCardProp) => {
+      {data.map((currItem: VideoCardProp,index:number) => {
             return (
               <SuggestionCard
+              key={index}
               description={currItem.description}
               videoUrl={currItem.videoUrl}
                 thumbnailUrl={currItem.thumbnailUrl}

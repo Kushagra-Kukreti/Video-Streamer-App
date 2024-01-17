@@ -3,7 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 const Video = () => {
 
    const location = useLocation();
-   
+   console.log("Path is", location.pathname)
    const info = location.state;
   return (
     <div className="card">
