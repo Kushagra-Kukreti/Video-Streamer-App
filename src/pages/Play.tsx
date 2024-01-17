@@ -1,11 +1,15 @@
 import { useLocation } from "react-router-dom"
-import { data } from "../utils/api";
 import  { VideoCardProp } from "../components/VideoCard";
 import SuggestionCard from "../components/SuggestionCard";
+import { useSearchFilter } from "../contexts/SearchFilterContext";
 
 
 const Play = () => {
-  const info = useLocation()
+  const info = useLocation();
+  
+   const {data}= useSearchFilter()
+  
+  
   return (
     <>
     <div 
