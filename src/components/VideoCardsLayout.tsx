@@ -1,10 +1,8 @@
 import VideoCard, { VideoCardProp } from './VideoCard';
-import { data } from '../utils/api';
 import { useSearchFilter } from '../contexts/SearchFilterContext';
-
 const VideoCardsLayout = () => {
-
-  const {searchValue} = useSearchFilter()
+  const {searchValue,data} = useSearchFilter()
+    
   return (
     <>
     <div 

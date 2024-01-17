@@ -36,8 +36,8 @@ const VideoCard = ({thumbnailUrl,duration,title,author,views,videoUrl,descriptio
         </span>
         </NavLink>
        
-        <div className="card-body bg-dark rounded-bottom p-2">
-          <h5 className="card-title text-white text-sm">{title}</h5>
+        <div className="card-body rounded-bottom p-1">
+          <h5 className="card-title text-sm">{title}</h5>
           <p className="card-text text-secondary">
              {views} . {author}
           </p>
