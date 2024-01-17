@@ -30,12 +30,16 @@ const VideoCard = ({thumbnailUrl,duration,title,author,views,videoUrl,descriptio
             height:"10rem",
             objectFit:"cover"
 
-        }} src={thumbnailUrl} className="card-img-top"/>
+        }} src={thumbnailUrl} className="postion-relative card-img-top"/>
+         <span className="position-absolute top-50 end-0 me-2 badge rounded bg-dark">
+        {duration}
+        </span>
         </NavLink>
-        <div className="card-body">
-          <h5 className="card-title">{title}</h5>
-          <p className="card-text">
-             {duration}{author}{views}
+       
+        <div className="card-body bg-dark rounded-bottom p-2">
+          <h5 className="card-title text-white text-sm">{title}</h5>
+          <p className="card-text text-secondary">
+             {views} . {author}
           </p>
         </div>
       </div>
