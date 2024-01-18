@@ -22,6 +22,7 @@ function App() {
     <Route path="/video" element={<Video />} />
     <Route path="/play" element={<Play/>} />
     <Route path="/webseries" element={<Webseries />} />
+    <Route path="*" element={<Home />} />
     </Routes>
     </>
     }

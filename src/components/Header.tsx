@@ -4,7 +4,7 @@ import { useSearchFilter } from "../contexts/SearchFilterContext";
 
 const Header = () => {
   const { logout } = useAuth0();
-  const { setSearchValue } = useSearchFilter();
+  const { setSearchValue ,searchValue} = useSearchFilter();
   const location = useLocation()
 
   const isPLay = location.pathname
@@ -13,11 +13,11 @@ const Header = () => {
       <div className="container-fluid">
         <img
           style={{
-            height: "2rem",
+            height: "2rem", 
             marginRight: "1rem",
             objectFit: "cover",
           }}
-          src="/public/images/youtube.png"
+          src="https://i.ibb.co/c8xyrs8/youtube.png"
         />
         <button
           className="navbar-toggler"
@@ -62,6 +62,7 @@ const Header = () => {
               type="search"
               placeholder="Search"
               aria-label="Search"
+              value={searchValue}
             />
             <button className="btn btn-success" type="submit">
               Search
