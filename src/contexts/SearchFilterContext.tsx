@@ -1,6 +1,7 @@
-import { ReactNode, createContext, useContext, useState } from "react";
+import { ReactNode, createContext, useContext} from "react";
 import { fetchData } from "../utils/api";
 import { VideoCardProp } from "../components/SuggestionCard";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 
 type SearchFilterProp = {
@@ -21,10 +22,13 @@ type SearchProviderProps = {
 }
 
 export function SearchFilterProvider ({children}:SearchProviderProps){
-  const [searchValue,setSearchValue] = useState("")
-  const [data,setData] = useState([])
+  const [searchValue,setSearchValue] = useLocalStorage("search","")
+  const [data,setData] = useLocalStorage("data",[])
+  
+ if(localStorage.getItem("data") === null)fetchData().then((response)=>setData(response))
 
-     fetchData().then((response)=>setData(response))
+
+     
     return <SearchFilterContext.Provider 
     value= {
         {
