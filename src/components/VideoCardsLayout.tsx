@@ -1,18 +1,19 @@
  
 import { useSearchFilter } from '../contexts/SearchFilterContext';
-import { VideoCardProp } from './SuggestionCard';
 import { Skeleton } from '@mui/material';
-import VideoCard from './VideoCard';
+import VideoCard, { VideoCardProp } from './VideoCard';
 const VideoCardsLayout = () => {
   const {searchValue,data} = useSearchFilter()
-    
+    console.log(data);
   return (
     <>
     <div 
       className="row"
       style={{
         marginLeft:"0.2rem",
-        gap:"1rem"
+        gap:"1rem",
+        display:"flex",
+        justifyContent:"center",
       }}
       >
         {data.length === 0?<Skeleton variant="rectangular" style={{width:"100%",height:"100%"}}/>:

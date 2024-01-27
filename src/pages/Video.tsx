@@ -1,4 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
+import VideoCardsLayout from "../components/VideoCardsLayout";
 
 const Video = () => {
 
@@ -6,6 +7,8 @@ const Video = () => {
    console.log("Path is", location.pathname)
    const info = location.state;
   return (
+
+    <>
     <div className="card">
       <div style={{padding:'0'}}>
       <img 
@@ -28,7 +31,12 @@ const Video = () => {
        className="btn btn-primary">Watch Now</div>
        </NavLink>
       </div>
-      <div className="card-body">
+      <div 
+      className="card-body" 
+      style={{
+        outline:"none",
+        border:"none"
+        }}>
         <h5 className="card-title">{info.title}</h5>
         <p className="card-text">
           {info.description}
@@ -38,6 +46,9 @@ const Video = () => {
         </p>
       </div>
     </div>
+    <br />
+    <VideoCardsLayout/>
+    </>
   );
 };
 

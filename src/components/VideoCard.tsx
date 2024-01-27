@@ -20,7 +20,8 @@ const VideoCard = ({thumbnailUrl,duration,title,author,views,videoUrl,descriptio
       style={
         { 
             width: "20rem",
-            padding:"0"
+            padding:"0",
+            
         }
         }>
        

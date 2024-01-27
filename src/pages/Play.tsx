@@ -1,36 +1,36 @@
 import { useLocation } from "react-router-dom"
-import  { VideoCardProp } from "../components/VideoCard";
-import SuggestionCard from "../components/SuggestionCard";
-import { useSearchFilter } from "../contexts/SearchFilterContext";
+import VideoCardsLayout from "../components/VideoCardsLayout";
 
 
 const Play = () => {
   const info = useLocation();
-  
-   const {data}= useSearchFilter()
+
   
   
   return (
     <>
     <div 
+    className="container-fluid"
     style={
       {
-        height:"80vh", 
         backgroundColor:"black",
         display:"flex",
         alignItems:"center",
         alignContent:"center",
-        textAlign:"center"
+        textAlign:"center",
+        overflow:"hidden"
 
       }
+      
           
           }>
        
       <video 
       controls
        style={{
-        height:"100%",
-        margin:"auto"
+        width:"100%",
+        margin:"auto",
+        objectFit:"cover"
      }}
       
      
@@ -38,31 +38,15 @@ const Play = () => {
       ></video>
 
     </div>
-    <div 
-    style={{
-      display:"flex",
-      overflow:"scroll",
-      gap:"1rem",
-      padding:"0.75rem",
-      scrollbarWidth:"none",
-      backgroundColor:"black"
-    }}
+    <div style={{marginTop:"0.5em"}}
     >
-      {data.map((currItem: VideoCardProp,index:number) => {
-            return (
-              <SuggestionCard
-              key={index}
-              description={currItem.description}
-              videoUrl={currItem.videoUrl}
-                thumbnailUrl={currItem.thumbnailUrl}
-                duration={currItem.duration}
-                title={currItem.title}
-                author={currItem.author}
-                views={currItem.author}
-              />
-            );
-          })}
+      <VideoCardsLayout/>
+
+
     </div>
+    
+     
+    
     </>
   )
 }
