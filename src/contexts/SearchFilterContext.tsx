@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useContext} from "react";
 import { fetchData } from "../utils/api";
-import { VideoCardProp } from "../components/SuggestionCard";
+import { VideoCardProp } from "../components/VideoCard";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 
